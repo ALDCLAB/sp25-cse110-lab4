@@ -18,13 +18,17 @@ function discountPrices(prices, discount) {
 discountPrices([100, 200, 300], 0.5);
 ```
 1. What will happen and why? If the code causes an error, explain why.  
-Result: 3
+Result: 3  
+The loop runs 3 times (i = 0, 1, 2). Due to being var, i is accessible and equals 3 as thats the final result of i when the for loop ends. 
 2. What will happen and why? If the code causes an error, explain why.  
-Result: 150
+Result: 150  
+discountedPrice is declared with var. The last value after the loop is 150.
 3. What will happen and why? If the code causes an error, explain why.  
-Result: 150
+Result: 150  
+finalPrice is updated each loop. The last value is 150 and is retained after the loop.
 4. What will this function return and why? Give a brief explanation. If the code causes an error, explain why.  
-Result:
+Result: [50, 100, 150]  
+The array contains the rounded discounted prices.
 
 ```
 function discountPrices(prices, discount) {
@@ -47,13 +51,17 @@ discountPrices([100, 200, 300], 0.5);
 // The difference is the var changed into let
 ```
 5. What will happen and why? If the code causes an error, explain why.  
-Result: ERROR. i is not defined as it is let, which is confined into the for loop. 
+Result: ERROR.   
+i is not defined as it is let, which is confined into the for loop. 
 6. What will happen and why? If the code causes an error, explain why.  
-Result: ERROR. discountedPrice is not definied as it is let, which is confied into the for loop. 
+Result: ERROR.  
+discountedPrice is not defined as it is let, which is confined into the for loop. 
 7. What will happen and why? If the code causes an error, explain why.  
-Result: 150
+Result: 150  
+finalPrice is declared with let in the function but not inside the for loop. The last value, 150, is still accessible.
 8. What will this function return and why? Give a brief explanation. If the code causes an error, explain why.  
-Result:  
+Result: [50, 100, 150]  
+The array contains the rounded discounted prices.
 
 ```
 function discountPrices(prices, discount) {
@@ -75,11 +83,12 @@ discountPrices([100, 200, 300], 0.5);
 // The difference is const, the variable length, etc. 
 ```
 9. What will happen and why? If the code causes an error, explain why.  
-Result: ERROR. i is not defined as it is let, which is confined into the for loop.
+Result: ERROR.  
+i is not defined as it is let, which is confined into the for loop.
 10. What will happen and why? If the code causes an error, explain why.  
 Result: 3
 11. What will this function return? Give a brief explanation. If the code causes an error, explain why.
-Result:
+Result: [50, 100, 150]
 
 ```
 let student = {
@@ -110,6 +119,13 @@ console.log(false + null);
 console.log('3' + undefined);
 console.log('3' - undefined);
 ```
+- 32
+1
+3
+3null
+4
+0
+3undefined
 14. For each of the following questions, note down the output as well as a brief explanation why that output was given.  
 ```
 console.log('2' > 1);
@@ -119,6 +135,13 @@ console.log(2 === '2');
 console.log(true == 2);
 console.log(true === Boolean(2));
 ```
+- true
+- false
+- true
+- false
+- false
+- true
+
 15.  Explain the difference between the == and === operators.  
 ```
 let statistics = {
@@ -147,4 +170,28 @@ function doSomething(num) {
 
 modifyArray([1,2,3], doSomething);
 ```
-17. 
+17. If the function above is called with the following parameters modifyArray([1,2,3], doSomething), what will be the result? Briefly walk through how you arrived at that result. Here we are passing in a function as a parameter, however we can also return a function from another function just as easily, you're encouraged to play around with callbacks as they are used heavily in frontend JS development. 
+
+```
+let d = new Date();
+let time = d.toLocaleTimeSTring();
+console.log(time);
+```
+18. The above program only prints out the time once when executed. Modify this code such that the program prints out the current time every second.
+
+```
+function printNums() {
+    console.log(1);
+    setTimeout(function() { console.log(2); }, 1000);
+    setTimeout(function() { console.log(3); }, 0);
+    console.log(4);
+}
+printNums();
+
+```
+19. What is the output of the above code?  
+1
+4
+3
+2
+
