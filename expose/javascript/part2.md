@@ -235,8 +235,8 @@ let d = new Date();
 let time = d.toLocaleTimeString();
 console.log(time);
 ```
-18. The above program only prints out the time once when executed. Modify this code such that the program prints out the current time every second.
-
+18. The above program only prints out the time once when executed. Modify this code such that the program prints out the current time every second.  
+[Solution](part2question18.js)  
 ```
 function printNums() {
     console.log(1);
